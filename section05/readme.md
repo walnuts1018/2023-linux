@@ -19,5 +19,13 @@ if ($oldPath.Split(';') -inotcontains 'C:\minikube'){ `
 ## k8s体験
 ### deployment作成
 ```powershell
-kubectl create deployment kubernetes-bootcamp --image=gcr.io/google-samples/kubernetes-bootcamp:v1
+kubectl create deployment nginx-test --image=nginx:latest
+```
+
+### コンテナにアクセス
+
+```powershell
+$POD_NAME=$(kubectl get pods -o go-template --template '{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}')
+echo $POD_NAME
+kubectl port-forward pod/$POD_NAME 8080:80
 ```
