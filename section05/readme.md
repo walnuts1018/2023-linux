@@ -32,7 +32,7 @@ kubectl port-forward pod/$POD_NAME 8080:80
 
 ### コンテナにアクセス (Service)
 ```powershell
-kubectl expose deploy nginx-test --port=80 --target-port=80![image](https://github.com/walnuts1018/2023-linux/assets/60650857/86e4bd19-6285-436b-95e5-3c563f47298a)
+kubectl expose deploy nginx-test --port=80 --target-port=80
 minikube service nginx-test
 ```
 
