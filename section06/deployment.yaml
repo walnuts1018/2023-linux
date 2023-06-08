@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-test-loadbalancer
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx-test-loadbalancer
+  template:
+    metadata:
+      labels:
+        app: nginx-test-loadbalancer
+    spec:
+      containers:
+      - name: nginx-test-loadbalancer
+        image: nginx
+        command:
+        - "sed -i 13i\"<p style=\\\"font-size: 30px; color: red;\\\">This is $HOSTNAME pod</p>\" /usr/share/nginx/html/index.html && nginx -g \"daemon off;\""
+        ports:
+        - containerPort: 80
