@@ -15,7 +15,7 @@ spec:
       containers:
       - name: nginx-test-loadbalancer
         image: nginx
-        command:
-        - "sed -i 13i\"<p style=\\\"font-size: 30px; color: red;\\\">This is $HOSTNAME pod</p>\" /usr/share/nginx/html/index.html && nginx -g \"daemon off;\""
+        command: ["/bin/sh","-c"]
+        args: ['sed -i 13i"<p style=\"font-size: 30px; color: red;\">This is $HOSTNAME pod</p>" /usr/share/nginx/html/index.html && nginx -g "daemon off;"']
         ports:
         - containerPort: 80
