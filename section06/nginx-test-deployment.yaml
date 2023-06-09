@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-test3
+  labels:
+    app: nginx-test3
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx-test3
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: nginx-test3
+    spec:
+      containers:
+      - name: nginx-test3
+        image: nginx:1.24
+        ports:
+        - name: http
+          containerPort: 80

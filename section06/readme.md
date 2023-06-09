@@ -16,12 +16,20 @@ kubectl expose deploy nginx-test --type=NodePort --port 80 --target-port 80
 
 ## LoadBalancerを使ってみる
 
+```bash
+minikube addons enable metallb
+```
+
+```bash
+kubectl apply -f https://raw.githubusercontent.com/walnuts1018/2023-linux/main/section06/metallb-configmap.yaml
+```
+
 ### nginx-test-loadbalancerのdeploymentを作る
 
 ```bash
-kubectl create deployment nginx-test-loadbalancer --image=nginx:latest -- 'sed -i 13i"<p style=\"font-size: 30px; color: red;\">This is $HOSTNAME pod</p>" /usr/share/nginx/html/index.html && nginx -g "daemon off;"'
+kubectl apply -f https://raw.githubusercontent.com/walnuts1018/2023-linux/main/section06/nginx-test-LB-deployment.yaml
 ```
 
-```
-sed -i 13i"<p style=\"font-size: 30px; color: red;\">This is $HOSTNAME pod</p>" /usr/share/nginx/html/index.html && nginx -g "daemon off;"
+```bash
+kubectl expose deploy nginx-test-loadbalancer  --type=LoadBalancer --port 80 --target-port 80
 ```

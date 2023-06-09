@@ -1,0 +1,44 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-test1
+  labels:
+    app: nginx-test1
+spec:
+  ports:
+  - name: http
+    port: 80
+    targetPort: 80
+  selector:
+    app: nginx-test1
+  type: NodePort
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-test2
+  labels:
+    app: nginx-test2
+spec:
+  ports:
+  - name: http
+    port: 80
+    targetPort: 80
+  selector:
+    app: nginx-test2
+  type: NodePort
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-test3
+  labels:
+    app: nginx-test3
+spec:
+  ports:
+  - name: http
+    port: 80
+    targetPort: 80
+  selector:
+    app: nginx-test3
+  type: NodePort
