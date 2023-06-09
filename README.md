@@ -21,4 +21,4 @@
   - [Kubernetes 1](https://1drv.ms/p/s!AiK7Qfi-Te74h8hXUUXL24xS9cGAkg?e=Nbj5ZD)
 
 ## 第6回
-  - [Kubernetes 2](./section06/section06.md)
+  - [Kubernetes 2](https://1drv.ms/p/s!AiK7Qfi-Te74h8lLJPajXEThXZ9beA)
