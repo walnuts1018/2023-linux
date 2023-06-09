@@ -1,5 +1,11 @@
 # 第6回コピペコマンド
 
+## Tips
+
+```bash
+kubectl completion powershell | Out-String | Invoke-Expression
+```
+
 ## 前回の補足
 
 ### 前回のServiceを消す
