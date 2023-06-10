@@ -96,5 +96,5 @@ kubectl rollout undo deployment nginx-test3
 ```
 
 ```bash
-kubectl rollout undo deployment nginx-test3　--to-revesion=2
+kubectl rollout undo deployment nginx-test3　--to-revision=2
 ```
